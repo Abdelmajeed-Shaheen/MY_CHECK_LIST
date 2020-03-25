@@ -4,7 +4,7 @@ import { done, deleteuw } from "../redux/actions";
 const ToDoListRow = props => {
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
-      <div class="input-group ">
+      <div className="input-group ">
         <button
           className="btn btn-outline-success mr-1"
           onClick={() => props.done(props.item)}
