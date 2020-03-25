@@ -8,7 +8,9 @@ import {
   RESET
 } from "../actions/actionTypes";
 const initialState = {
-  notdone: JSON.parse(localStorage.getItem("notdone")),
+  notdone: JSON.parse(localStorage.getItem("notdone"))
+    ? JSON.parse(localStorage.getItem("notdone"))
+    : [],
   done: JSON.parse(localStorage.getItem("done"))
     ? JSON.parse(localStorage.getItem("done"))
     : []
