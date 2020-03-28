@@ -37,7 +37,7 @@ function App(props) {
             <DoneTable />
           </div>
         </div>
-        <Save />
+        {props.list === null && <Save />}
       </div>
     </>
   );
