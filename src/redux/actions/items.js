@@ -5,7 +5,11 @@ import {
   DELETE_W,
   ADD,
   DELETE_ALL,
-  RESET
+  RESET,
+  SAVE,
+  SELECT,
+  DELET_LISTS,
+  DELET_LIST
 } from "./actionTypes";
 
 export const notdone = item => {
@@ -49,5 +53,28 @@ export const deletall = () => {
 export const reset = () => {
   return {
     type: RESET
+  };
+};
+export const save = item => {
+  return {
+    type: SAVE,
+    payload: item
+  };
+};
+export const select = item => {
+  return {
+    type: SELECT,
+    payload: item
+  };
+};
+export const deletelists = () => {
+  return {
+    type: DELET_LISTS
+  };
+};
+export const deletelist = item => {
+  return {
+    type: DELET_LIST,
+    payload: item
   };
 };

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { add } from "../redux/actions";
+import { save } from "../redux/actions";
 //onChange={e => onChange(e.target.value)}
-class Add extends Component {
+class Save extends Component {
   state = {
     item: ""
   };
@@ -12,14 +12,14 @@ class Add extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.state.item) {
-      this.props.add(this.state.item);
+      this.props.save(this.state.item);
       this.setState({ item: "" });
     }
   };
   render() {
     const { item } = this.state;
     return (
-      <div className="row mt-2">
+      <div className="row mt-5">
         <div className="col-md-3"></div>
         <div className="col-md-6">
           <form onSubmit={this.handleSubmit}>
@@ -27,7 +27,7 @@ class Add extends Component {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Item...."
+                placeholder="Save List...."
                 id="item"
                 name="item"
                 value={item}
@@ -35,7 +35,7 @@ class Add extends Component {
               />
               <div className="input-group-prepend">
                 <button className="input-group-text" id="basic-addon1">
-                  <i className=" fa fa-plus"> </i>
+                  <i className=" fa fa-save"> </i>
                 </button>
               </div>
             </div>
@@ -48,8 +48,8 @@ class Add extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    add: item => dispatch(add(item))
+    save: item => dispatch(save(item))
   };
 };
 
-export default connect(null, mapDispatchToProps)(Add);
+export default connect(null, mapDispatchToProps)(Save);

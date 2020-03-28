@@ -5,5 +5,9 @@ export {
   deletew,
   add,
   deletall,
-  reset
+  reset,
+  save,
+  select,
+  deletelists,
+  deletelist
 } from "./items";

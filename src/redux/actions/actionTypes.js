@@ -5,3 +5,7 @@ export const DELETE_UW = "DELETE_UW";
 export const DELETE_ALL = "DELETE_ALL";
 export const RESET = "RESET";
 export const ADD = "ADD";
+export const SAVE = "SAVE";
+export const SELECT = "SELECT";
+export const DELET_LISTS = "DELET_LISTS";
+export const DELET_LIST = "DELET_LIST";
