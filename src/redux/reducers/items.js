@@ -135,9 +135,24 @@ const reducer = (state = initialState, action) => {
       const mySet = new Set(items);
       const uniqarray = [...mySet];
       localStorage.setItem("notdone", JSON.stringify(uniqarray));
+      const list6 = JSON.parse(localStorage.getItem("list"));
+      let alllists5 = JSON.parse(localStorage.getItem("mylists"));
+      let mylists5 = JSON.parse(localStorage.getItem("mylists"))
+        ? JSON.parse(localStorage.getItem("mylists"))
+        : [];
+      if (list6 && alllists5) {
+        alllists5 = alllists5.filter(item => item.title !== list6.title);
+        list6.done = JSON.parse(localStorage.getItem("done"));
+        list6.notdone = JSON.parse(localStorage.getItem("notdone"));
+        alllists5.push(list6);
+        localStorage.setItem("mylists", JSON.stringify(alllists5));
+        mylists5 = JSON.parse(localStorage.getItem("mylists"));
+      }
       return {
         ...state,
-        notdone: uniqarray
+        notdone: uniqarray,
+        mylists: mylists5,
+        lsit: list6
       };
     case DELETE_ALL:
       localStorage.setItem("done", JSON.stringify([]));
